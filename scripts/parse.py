@@ -7,7 +7,7 @@ import xml.etree.cElementTree as ET
 
 provinces_dict = {}
 regencies_dict = {}
-districs_dict = {}
+districts_dict = {}
 villages_dict = {}
 
 def read_html_data(fname):
@@ -41,7 +41,7 @@ def process_buffer(buf):
 
     provinces_dict[province_id] = province_name
     regencies_dict[regency_id] = regency_name
-    districs_dict[district_id] = district_name
+    districts_dict[district_id] = district_name
     villages_dict[village_id] = village_name
 
 def write_data_to_csv():
@@ -49,18 +49,18 @@ def write_data_to_csv():
     write_dict_to_csv('../csv/provinces.csv', provinces_dict)
     print 'Writing regencies data...'
     write_dict_to_csv('../csv/regencies.csv', regencies_dict, 2)
-    print 'Writing districs data...'
-    write_dict_to_csv('../csv/districs.csv', districs_dict, 5)
+    print 'Writing districts data...'
+    write_dict_to_csv('../csv/districts.csv', districts_dict, 5)
     print 'Writing villages data...'
     write_dict_to_csv('../csv/villages.csv', villages_dict, 7)
     print 'Done.'
 
-def write_dict_to_csv(fname, data_dict, prev_key_length = 0):
+def write_dict_to_csv(fname, data_dict, upper_level_key_length = 0):
     with open(fname, 'wb') as fp:
         fcsv = csv.writer(fp, delimiter=',')
-        if prev_key_length > 0:
+        if upper_level_key_length > 0:
             for key, value in sorted(data_dict.iteritems()):
-                fcsv.writerow([key, key[:prev_key_length], value])
+                fcsv.writerow([key, key[:upper_level_key_length], value])
         else:
             for key, value in sorted(data_dict.iteritems()):
                 fcsv.writerow([key, value])
