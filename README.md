@@ -1,9 +1,9 @@
 # Data Provinsi, Kota/Kabupaten, Kecamatan, dan Kelurahan/Desa di Indonesia
 Data ini diambil dari situs [Pemutakhiran MFD dan MBS
-Badan Pusat Statistik (http://mfdonline.bps.go.id/)](http://mfdonline.bps.go.id/) pada **16 Juli 2015**.
+Badan Pusat Statistik (http://mfdonline.bps.go.id/)](http://mfdonline.bps.go.id/) pada **17 Agustus 2015**.
 
 # Administrative Subdivisions of Indonesia (Provinces, Regencies/Cities, Disticts, Villages)
-The data were taken from [Central Agency on Statistics (BPS) - MFD and MBS Update (http://mfdonline.bps.go.id/)](http://mfdonline.bps.go.id/) on **16 July 2015**.
+The data were taken from [Central Agency on Statistics (BPS) - MFD and MBS Update (http://mfdonline.bps.go.id/)](http://mfdonline.bps.go.id/) on **17 August 2015**.
 
 The data were `curl`-ed from BPS site:
 
