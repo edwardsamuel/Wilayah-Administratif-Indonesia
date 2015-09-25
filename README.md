@@ -8,6 +8,8 @@ The data were taken from [Central Agency on Statistics (BPS) - MFD and MBS Updat
 The data were `curl`-ed from BPS site:
 
     curl http://mfdonline.bps.go.id/index.php?link=hasil_pencarian --data "pilihcari=desa&kata_kunci=%25"
+    
+**Note**: The script is *not* working anymore, because MDF does not allow `%` as search keyword. The script needs to be fixed. One of the solution may be: do a few search (`A` to `Z`) and combine the data. Or, you can ask BPS to get the data.
 
 ### Generate new data
 
