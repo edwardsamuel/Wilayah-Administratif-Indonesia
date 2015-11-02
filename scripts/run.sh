@@ -2,12 +2,10 @@
 
 DB_NAME=indonesia
 DB_USER=root
-DB_PASS=password
+DB_PASS=root
 
 TMP_DIR='/tmp/indonesia'
 PWD_DIR=$PWD
-
-# mysql -u $DB_USER --password=$DB_PASS $DB_NAME < base_db.sql
 
 if [ ! -d $TMP_DIR ]; then
 	mkdir -p $TMP_DIR
@@ -23,8 +21,8 @@ for key in 'a' 'i' 'u' 'e' 'o'; do
 	./parse.py $TMP_DIR $DB_NAME-$key.html $key
 done
 unset key
-# rm $DB_NAME.html
 
+# mysql -u $DB_USER --password=$DB_PASS $DB_NAME < base_db.sql
 mysql $DB_NAME < base_db.sql
 
 for area in 'provinces' 'regencies' 'districts' 'villages'; do
@@ -37,3 +35,5 @@ done
 
 # mysqldump -u $DB_USER --password=$DB_PASS $DB_NAME > ../mysql/$DB_NAME.sql
 mysqldump $DB_NAME > ../mysql/$DB_NAME.sql
+
+rm -rf $TMP_DIR
