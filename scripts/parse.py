@@ -29,7 +29,7 @@ def read_html_data(fname):
 
 def process_buffer(buf):
     tnode = ET.fromstring(buf)
-    print tnode[0].text.strip()
+    # print tnode[0].text.strip()
     province_id = tnode[1].text.strip()
     province_name = tnode[2].text.strip()
     regency_id = province_id + tnode[3].text.strip()
@@ -44,15 +44,15 @@ def process_buffer(buf):
     districts_dict[district_id] = district_name
     villages_dict[village_id] = village_name
 
-def write_data_to_csv():
+def write_data_to_csv(tmp_dir, key):
     print 'Writing provinces data...'
-    write_dict_to_csv('../csv/provinces.csv', provinces_dict)
+    write_dict_to_csv(tmp_dir + '/provinces-' + key + '.csv', provinces_dict)
     print 'Writing regencies data...'
-    write_dict_to_csv('../csv/regencies.csv', regencies_dict, 2)
+    write_dict_to_csv(tmp_dir + '/regencies-' + key + '.csv', regencies_dict, 2)
     print 'Writing districts data...'
-    write_dict_to_csv('../csv/districts.csv', districts_dict, 5)
+    write_dict_to_csv(tmp_dir + '/districts-' + key + '.csv', districts_dict, 5)
     print 'Writing villages data...'
-    write_dict_to_csv('../csv/villages.csv', villages_dict, 7)
+    write_dict_to_csv(tmp_dir + '/villages-' + key + '.csv', villages_dict, 7)
     print 'Done.'
 
 def write_dict_to_csv(fname, data_dict, upper_level_key_length = 0):
@@ -66,11 +66,11 @@ def write_dict_to_csv(fname, data_dict, upper_level_key_length = 0):
                 fcsv.writerow([key, value])
 
 def main(argv):
-    if (len(argv) == 1):
-        read_html_data(argv[0])
-        write_data_to_csv()
+    if (len(argv) > 0):
+        read_html_data(argv[0] + '/' + argv[1])
+        write_data_to_csv(argv[0], argv[2])
     else:
-        print "usage: parse.py <html_input_file>"
+        print "usage: parse.py <directory> <html_input_file> <key>"
         sys.exit(2)
 
 if __name__ == "__main__":
