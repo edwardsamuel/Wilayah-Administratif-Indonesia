@@ -2,7 +2,7 @@
 Data ini diambil dari situs [Pemutakhiran MFD dan MBS
 Badan Pusat Statistik (http://mfdonline.bps.go.id/)](http://mfdonline.bps.go.id/) pada **2 November 2015**.
 
-# Administrative Subdivisions of Indonesia (Provinces, Regencies/Cities, Disticts, Villages)
+# Administrative Subdivisions of Indonesia (Provinces, Regencies/Cities, Districts, Villages)
 The data were taken from [Central Agency on Statistics (BPS) - MFD and MBS Update (http://mfdonline.bps.go.id/)](http://mfdonline.bps.go.id/) on **2 November 2015**.
 
 The data were `curl`-ed from BPS site:
