@@ -26,7 +26,7 @@ for area in "provinces" "regencies" "districts" "villages"; do
 	cat ${TMP_DIR}/${area}-*.csv | sort | uniq > ../csv/${area}.csv
 
 	echo "Importing ${area}"
-	mysqlimport --fields-terminated-by=, --lines-terminated-by="\r\n" -L ${DB_NAME} ../csv/${area}.csv
+	mysqlimport ${MYSQL_CONNECTION_OPTIONS} --fields-terminated-by=, --lines-terminated-by="\r\n" -L ${DB_NAME} ../csv/${area}.csv
 done
 
 mysqldump ${MYSQL_CONNECTION_OPTIONS} ${DB_NAME} > ../mysql/${DB_NAME}.sql
