@@ -50,7 +50,7 @@ def write_data_to_csv(tmp_dir, key):
     print 'Writing regencies data...'
     write_dict_to_csv(tmp_dir + '/regencies-' + key + '.csv', regencies_dict, 2)
     print 'Writing districts data...'
-    write_dict_to_csv(tmp_dir + '/districts-' + key + '.csv', districts_dict, 5)
+    write_dict_to_csv(tmp_dir + '/districts-' + key + '.csv', districts_dict, 4)
     print 'Writing villages data...'
     write_dict_to_csv(tmp_dir + '/villages-' + key + '.csv', villages_dict, 7)
     print 'Done.'

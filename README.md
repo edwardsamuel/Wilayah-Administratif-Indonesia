@@ -18,7 +18,7 @@ In order to generate new data:
     cd scripts
     ./run.sh
 
-*NOTE*: Please create a MySQL database (named: `indonesia`) and import [`scripts/base_db.sql`](blob/master/scripts/base_db.sql) before run the script. You might need to update MySQL credentials in [`scripts/run.sh`](blob/master/scripts/run.sh).
+*NOTE*: Please create a MySQL database (named: `indonesia`) before run the script. You might need to update MySQL credentials in [`scripts/run.sh`](blob/master/scripts/run.sh).
 
 ### License
 
