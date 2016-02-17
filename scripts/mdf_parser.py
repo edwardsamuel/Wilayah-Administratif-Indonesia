@@ -70,7 +70,7 @@ def main(argv):
         read_html_data(argv[0] + '/' + argv[1])
         write_data_to_csv(argv[0], argv[2])
     else:
-        print "usage: parse.py <directory> <html_input_file> <key>"
+        print "usage: mdf_parser.py <directory> <html_input_file> <key>"
         sys.exit(2)
 
 if __name__ == "__main__":
