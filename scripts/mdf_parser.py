@@ -1,7 +1,6 @@
 #!/usr/bin/python2
 
 import csv
-import getopt
 import sys
 import xml.etree.cElementTree as ET
 
@@ -9,6 +8,7 @@ provinces_dict = {}
 regencies_dict = {}
 districts_dict = {}
 villages_dict = {}
+
 
 def read_html_data(fname):
     print 'Reading html data...'
@@ -27,6 +27,7 @@ def read_html_data(fname):
             elif append:
                 inputbuffer += line
 
+
 def process_buffer(buf):
     tnode = ET.fromstring(buf)
     # print tnode[0].text.strip()
@@ -44,6 +45,7 @@ def process_buffer(buf):
     districts_dict[district_id] = district_name
     villages_dict[village_id] = village_name
 
+
 def write_data_to_csv(tmp_dir, key):
     print 'Writing provinces data...'
     write_dict_to_csv(tmp_dir + '/provinces-' + key + '.csv', provinces_dict)
@@ -55,7 +57,8 @@ def write_data_to_csv(tmp_dir, key):
     write_dict_to_csv(tmp_dir + '/villages-' + key + '.csv', villages_dict, 7)
     print 'Done.'
 
-def write_dict_to_csv(fname, data_dict, upper_level_key_length = 0):
+
+def write_dict_to_csv(fname, data_dict, upper_level_key_length=0):
     with open(fname, 'wb') as fp:
         fcsv = csv.writer(fp, delimiter=',')
         if upper_level_key_length > 0:
@@ -65,6 +68,7 @@ def write_dict_to_csv(fname, data_dict, upper_level_key_length = 0):
             for key, value in sorted(data_dict.iteritems()):
                 fcsv.writerow([key, value])
 
+
 def main(argv):
     if (len(argv) > 0):
         read_html_data(argv[0] + '/' + argv[1])
@@ -73,5 +77,6 @@ def main(argv):
         print "usage: mdf_parser.py <directory> <html_input_file> <key>"
         sys.exit(2)
 
+
 if __name__ == "__main__":
-   main(sys.argv[1:])
+    main(sys.argv[1:])
