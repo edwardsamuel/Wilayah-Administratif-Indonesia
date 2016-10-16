@@ -29,4 +29,12 @@ echo "Writing MySQL dump file"
 
 # rm -rf $TMP_DIR
 
+echo "Testing MySQL dump..."
+echo "> Creating database"
+mysql -u root -h mysql -e "CREATE DATABASE IF NOT EXISTS indonesia;"
+echo "> Importing database"
+mysql -u root -h mysql indonesia < ../mysql/indonesia.sql
+echo "> Statistics"
+mysql -u root -h mysql -t indonesia < ./statistics.sql
+
 echo "Done."
