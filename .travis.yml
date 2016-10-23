@@ -1,9 +1,4 @@
-language: python
-
-python: 2.7
-
-install:
-  - pip install flake8
-
-script:
-  - flake8
+---
+language: generic
+services: docker
+script: docker run --volume=$(pwd):/app --workdir=/app coala/base:pre coala-ci

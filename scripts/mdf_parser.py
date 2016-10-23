@@ -11,7 +11,7 @@ villages_dict = {}
 
 
 def read_html_data(fname):
-    print 'Reading html data...'
+    print('Reading html data...')
     with open(fname, 'rb') as inputfile:
         append = False
         for line in inputfile:
@@ -47,15 +47,15 @@ def process_buffer(buf):
 
 
 def write_data_to_csv(tmp_dir, key):
-    print 'Writing provinces data...'
+    print('Writing provinces data...')
     write_dict_to_csv(tmp_dir + '/provinces-' + key + '.csv', provinces_dict)
-    print 'Writing regencies data...'
+    print('Writing regencies data...')
     write_dict_to_csv(tmp_dir + '/regencies-' + key + '.csv', regencies_dict, 2)
-    print 'Writing districts data...'
+    print('Writing districts data...')
     write_dict_to_csv(tmp_dir + '/districts-' + key + '.csv', districts_dict, 4)
-    print 'Writing villages data...'
+    print('Writing villages data...')
     write_dict_to_csv(tmp_dir + '/villages-' + key + '.csv', villages_dict, 7)
-    print 'Done.'
+    print('Done.')
 
 
 def write_dict_to_csv(fname, data_dict, upper_level_key_length=0):
@@ -74,7 +74,7 @@ def main(argv):
         read_html_data(argv[0] + '/' + argv[1])
         write_data_to_csv(argv[0], argv[2])
     else:
-        print "usage: mdf_parser.py <directory> <html_input_file> <key>"
+        print("usage: mdf_parser.py <directory> <html_input_file> <key>")
         sys.exit(2)
 
 
