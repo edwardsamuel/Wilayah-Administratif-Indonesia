@@ -21,7 +21,7 @@ unset key
 
 for area in "provinces" "regencies" "districts" "villages"; do
 	echo "Combining ${area} into ../csv/${area}.csv"
-	cat ${TMP_DIR}/${area}-*.csv | sort | uniq > ../csv/${area}.csv
+	cat ${TMP_DIR}/${area}-*.csv | sort | uniq | dos2unix > ../csv/${area}.csv
 done
 
 echo "Writing MySQL dump file"
