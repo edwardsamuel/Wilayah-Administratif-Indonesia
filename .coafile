@@ -1,0 +1,38 @@
+[default]
+bears = FilenameBear, coalaBear, InvalidLinkBear, KeywordBear, SpaceConsistencyBear
+files = **.yml, **.md, **.sql, **.py, **.txt, **.csv, **.cfg
+keywords = FIXME
+max_line_length = 100
+max_lines_per_file = 100
+use_spaces = True
+link_ignore_regex = (.*github\.com.*fork)$
+
+[config]
+bears = LineCountBear, LineLengthBear
+files = **.txt, **.cfg, scripts/templates/*.sql
+max_line_length = 102
+
+[data]
+bears = LineLengthBear
+files = **.sql, **.csv
+max_line_length = 102
+
+[python]
+bears = LineCountBear, LineLengthBear, PEP8Bear, PyImportSortBear, PyLintBear, PyUnusedCodeBear, RadonBear, VultureBear
+files = **.py
+max_lines_per_file = 300
+pylint_disable = C0103,C0111,C0325,E0401
+
+[markdown]
+bears = LineCountBear, LineLengthBear
+files = **.md
+max_lines_per_file = 600
+
+[yaml]
+bears = LineCountBear, LineLengthBear, YAMLLintBear
+files = **.yml
+
+[sh]
+bears = FilenameBear, coalaBear, InvalidLinkBear, KeywordBear, LineCountBear, LineLengthBear, ShellCheckBear, SpaceConsistencyBear
+files = **.sh
+use_spaces = False

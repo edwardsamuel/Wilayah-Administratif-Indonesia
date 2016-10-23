@@ -2,6 +2,7 @@
 
 import csv
 import sys
+
 import MySQLdb
 
 SPLIT_ROWS = 50
@@ -9,12 +10,7 @@ SPLIT_ROWS = 50
 
 def copy_content(path):
     with open(path, "r") as f:
-        print f.read()
-
-
-def write_footer():
-    with open("templates/mysql_footer.sql", "r") as f:
-        print f.read()
+        print(f.read())
 
 
 def csv_to_list(path):
@@ -27,12 +23,12 @@ def csv_to_list(path):
 
 
 def write_insert_header(table_name):
-    print "--"
-    print "-- Dumping data for table `%s`" % (table_name)
-    print "--"
-    print ""
-    print "LOCK TABLES `%s` WRITE;" % (table_name)
-    print "/*!40000 ALTER TABLE `%s` DISABLE KEYS */;" % (table_name)
+    print("--")
+    print("-- Dumping data for table `%s`" % (table_name))
+    print("--")
+    print("")
+    print("LOCK TABLES `%s` WRITE;" % (table_name))
+    print("/*!40000 ALTER TABLE `%s` DISABLE KEYS */;" % (table_name))
 
 
 def write_insert_body(table_name, rows):
@@ -40,7 +36,7 @@ def write_insert_body(table_name, rows):
     last_row = len(rows) - 1
     for row in rows:
         if (counter % SPLIT_ROWS == 0):
-            print "INSERT INTO `%s` VALUES" % (table_name)
+            print("INSERT INTO `%s` VALUES" % (table_name))
         if (counter == last_row or counter % SPLIT_ROWS == SPLIT_ROWS - 1):
             print("  ('%s', '%s', '%s');"
                   % (row[0], row[1], MySQLdb.escape_string(row[2])))
@@ -51,8 +47,8 @@ def write_insert_body(table_name, rows):
 
 
 def write_insert_footer(table_name):
-    print "/*!40000 ALTER TABLE `%s` ENABLE KEYS */;" % (table_name)
-    print "UNLOCK TABLES;"
+    print("/*!40000 ALTER TABLE `%s` ENABLE KEYS */;" % (table_name))
+    print("UNLOCK TABLES;")
 
 
 def write_provinces(path):
@@ -63,11 +59,11 @@ def write_provinces(path):
     last_row = len(rows) - 1
     for row in rows:
         if (counter % SPLIT_ROWS == 0):
-            print "INSERT INTO `provinces` VALUES"
+            print("INSERT INTO `provinces` VALUES")
         if (counter == last_row or counter % SPLIT_ROWS == SPLIT_ROWS - 1):
-            print "  ('%s', '%s');" % (row[0], MySQLdb.escape_string(row[1]))
+            print("  ('%s', '%s');" % (row[0], MySQLdb.escape_string(row[1])))
         else:
-            print "  ('%s', '%s')," % (row[0], MySQLdb.escape_string(row[1]))
+            print("  ('%s', '%s')," % (row[0], MySQLdb.escape_string(row[1])))
         counter += 1
 
     write_insert_footer("provinces")
@@ -101,7 +97,7 @@ def main(argv):
         write_regencies(argv[1])
         write_districts(argv[2])
         write_villages(argv[3])
-        print ""
+        print("")
         copy_content("templates/mysql_footer.sql")
     else:
         print("usage: mdf_mysql_converter.py <provinces_csv> "
