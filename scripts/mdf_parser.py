@@ -46,6 +46,11 @@ def process_buffer(buf):
     villages_dict[village_id] = village_name
 
 
+def fix_villages(villages):
+    for key, value in villages.items():
+        villages_dict[key] = value
+
+
 def write_data_to_csv(tmp_dir, key):
     print 'Writing provinces data...'
     write_dict_to_csv(tmp_dir + '/provinces-' + key + '.csv', provinces_dict)
@@ -72,6 +77,7 @@ def write_dict_to_csv(fname, data_dict, upper_level_key_length=0):
 def main(argv):
     if (len(argv) > 0):
         read_html_data(argv[0] + '/' + argv[1])
+        fix_villages({1105130121: 'ALUE DUA MUKA O', 3506190010: 'SITIMERTO'})
         write_data_to_csv(argv[0], argv[2])
     else:
         print "usage: mdf_parser.py <directory> <html_input_file> <key>"
