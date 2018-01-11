@@ -63,7 +63,10 @@ def write_dict_to_csv(fname, data_dict, upper_level_key_length=0):
         fcsv = csv.writer(fp, delimiter=',')
         if upper_level_key_length > 0:
             for key, value in sorted(data_dict.iteritems()):
-                fcsv.writerow([key, key[:upper_level_key_length], value])
+                fcsv.writerow([
+                    key.encode('utf-8'),
+                    key[:upper_level_key_length].encode('utf-8'),
+                    value.encode('utf-8')])
         else:
             for key, value in sorted(data_dict.iteritems()):
                 fcsv.writerow([key, value])
