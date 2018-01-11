@@ -62,6 +62,10 @@ In order to generate new data:
     pip install -r requirements.txt
     ./run.sh
 
+We use `mysql` as default database hostname and `root` as default database username, but if you have different database setup on your local machine, you can simply run it with argument:
+
+    ./run -h [my-db-host] -u [my-db-username]
+
 You can also run `docker-compose` (more preferred):
 
     docker-compose build
