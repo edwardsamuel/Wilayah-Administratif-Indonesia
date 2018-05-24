@@ -19,12 +19,12 @@ with `a`, `i`, `u`, `e` and `o` as the keywords.
 +------+---------------------------+----------------+-----------+----------------+
 | 11   | ACEH                      |             23 |       289 |           6509 |
 | 12   | SUMATERA UTARA            |             33 |       449 |           6136 |
-| 13   | SUMATERA BARAT            |             19 |       179 |           1274 |
+| 13   | SUMATERA BARAT            |             19 |       179 |           1275 |
 | 14   | RIAU                      |             12 |       169 |           1873 |
 | 15   | JAMBI                     |             11 |       141 |           1562 |
-| 16   | SUMATERA SELATAN          |             17 |       236 |           3263 |
+| 16   | SUMATERA SELATAN          |             17 |       237 |           3263 |
 | 17   | BENGKULU                  |             10 |       128 |           1515 |
-| 18   | LAMPUNG                   |             15 |       228 |           2650 |
+| 18   | LAMPUNG                   |             15 |       228 |           2654 |
 | 19   | KEPULAUAN BANGKA BELITUNG |              7 |        47 |            391 |
 | 21   | KEPULAUAN RIAU            |              7 |        70 |            416 |
 | 31   | DKI JAKARTA               |              6 |        44 |            267 |
@@ -36,21 +36,21 @@ with `a`, `i`, `u`, `e` and `o` as the keywords.
 | 51   | BALI                      |              9 |        57 |            716 |
 | 52   | NUSA TENGGARA BARAT       |             10 |       117 |           1144 |
 | 53   | NUSA TENGGARA TIMUR       |             22 |       309 |           3353 |
-| 61   | KALIMANTAN BARAT          |             14 |       174 |           2136 |
-| 62   | KALIMANTAN TENGAH         |             14 |       136 |           1575 |
-| 63   | KALIMANTAN SELATAN        |             13 |       152 |           2008 |
+| 61   | KALIMANTAN BARAT          |             14 |       174 |           2137 |
+| 62   | KALIMANTAN TENGAH         |             14 |       136 |           1577 |
+| 63   | KALIMANTAN SELATAN        |             13 |       153 |           2008 |
 | 64   | KALIMANTAN TIMUR          |             10 |       103 |           1038 |
 | 65   | KALIMANTAN UTARA          |              5 |        53 |            482 |
 | 71   | SULAWESI UTARA            |             15 |       171 |           1838 |
-| 72   | SULAWESI TENGAH           |             13 |       175 |           2019 |
+| 72   | SULAWESI TENGAH           |             13 |       175 |           2020 |
 | 73   | SULAWESI SELATAN          |             24 |       307 |           3049 |
-| 74   | SULAWESI TENGGARA         |             17 |       222 |           2357 |
+| 74   | SULAWESI TENGGARA         |             17 |       222 |           2359 |
 | 75   | GORONTALO                 |              6 |        77 |            734 |
 | 76   | SULAWESI BARAT            |              6 |        69 |            650 |
 | 81   | MALUKU                    |             11 |       118 |           1238 |
 | 82   | MALUKU UTARA              |             10 |       116 |           1198 |
 | 91   | PAPUA BARAT               |             13 |       217 |           1847 |
-| 94   | PAPUA                     |             29 |       569 |           5382 |
+| 94   | PAPUA                     |             27 |       559 |           5338 |
 +------+---------------------------+----------------+-----------+----------------+
 ```
 
