@@ -28,7 +28,7 @@ def csv_to_list(path):
 
 def write_insert_header(table_name):
     print "--"
-    print "-- Dumping data for table `%s`" % (table_name)
+    print "-- Dumping data-data for table `%s`" % (table_name)
     print "--"
     print ""
     print "LOCK TABLES `%s` WRITE;" % (table_name)
